@@ -25,11 +25,10 @@ var carDescription = {
         var selection1 = this.make[0] + this.color[2] + this.Transmission[0];
         return selection1;
         
-    },//end of selection method
+    },
     
     
-    
-}// end of carDescription object
+};// end of carDescription object
 
 console.log("Player " + numberOfplayers[0] + " has selected " + carDescription.selection());
 
@@ -54,3 +53,25 @@ var carDescription = {
 }// end of carDescription object
 
 console.log("Player " + numberOfplayers[1] + " has selected " + carDescription.selection());
+
+var lapsLeft = function(numberOfLaps){
+    
+    var lapsRemaining = 5
+    
+    while (numberOfLaps >0) {
+        console.log(numberOfLaps + " laps left to go.");
+    
+        almostDone = numberOfLaps --;
+    
+    };
+    
+        console.log("The race is over!");
+        return almostDone;
+    
+         lapsLeft(lapsRemaining);
+
+};
+
+    
+    
+    console.log("Player " + numberOfplayers[0] + " won the race!");
