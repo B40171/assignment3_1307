@@ -7,7 +7,9 @@
 
 var select = " Please select ";
 var numberOfplayers =[1,2];
-
+var tires = "tires";
+var suspension = "suspension";
+var lapsRemaining =5;
 console.log (select + "number of players.");
 console.log ("number of players selected is " + numberOfplayers[1]);
 
@@ -20,13 +22,11 @@ var carDescription = {
     "Transmission":[" automatic "," standard "],
     
     "selection": function(){ // method accessor 
-        
-        
+                
         var selection1 = this.make[0] + this.color[2] + this.Transmission[0];
         return selection1;
         
     },
-    
     
 };// end of carDescription object
 
@@ -54,9 +54,25 @@ var carDescription = {
 
 console.log("Player " + numberOfplayers[1] + " has selected " + carDescription.selection());
 
-var lapsLeft = function(numberOfLaps){
+;
+
+var upgrades = function(upgrade1,upgrade2){
     
-    var lapsRemaining = 5
+    for (var i=0, a=1; i<a; i++) {
+
+        console.log("Player " + numberOfplayers[0] + " upgraded " + upgrade1[i] + " and " + upgrade2[i]);
+    
+    };
+   
+    return upgrades;
+
+};
+
+var readyToRace = upgrades(["tires"],["suspension"]);
+
+;
+
+var lapsLeft = function(numberOfLaps) {
     
     while (numberOfLaps >0) {
         console.log(numberOfLaps + " laps left to go.");
@@ -68,10 +84,11 @@ var lapsLeft = function(numberOfLaps){
         console.log("The race is over!");
         return almostDone;
     
-         lapsLeft(lapsRemaining);
-
 };
 
+         lapsLeft(lapsRemaining);
+
+ console.log("Player " + numberOfplayers[0] + " won the race!");
     
-    
-    console.log("Player " + numberOfplayers[0] + " won the race!");
+;
+
