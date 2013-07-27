@@ -28,11 +28,13 @@ var carDescription = {
         
     },
     
-};// end of carDescription object
+    };// end of carDescription object
 
-console.log("Player " + numberOfplayers[0] + " has selected " + carDescription.selection());
+    console.log("Player " + numberOfplayers[0] + " has selected " + carDescription.selection());
 
-console.log("Player " + numberOfplayers[1]+ select + "your vehicle.");
+    console.log("Player " + numberOfplayers[1]+ select + "your vehicle.");
+    
+;
 
 var carDescription = {
     
@@ -47,40 +49,54 @@ var carDescription = {
         return selection1;
         
     },//end of selection method
-    
-    
-    
-}// end of carDescription object
+        
+    }// end of carDescription object
 
-console.log("Player " + numberOfplayers[1] + " has selected " + carDescription.selection());
+    console.log("Player " + numberOfplayers[1] + " has selected " + carDescription.selection());
 
 ;
 
-var upgrades = function(upgrade1,upgrade2){
+var upgrades ={
     
-    for (var i=0, a=1; i<a; i++) {
-
-        console.log("Player " + numberOfplayers[0] + " upgraded " + upgrade1[i] + " and " + upgrade2[i]);
+    "upgrade1": "tires",
+    "upgrade2": "suspension",
+    "upgrade3":["injectors"," supercharger"],
+    "upgrade4":"transmission",
     
-    };
-   
-    return upgrades;
+    "totalUpgrades": function(){
+        
+        var totalPackage = this.upgrade1 + " , " + this.upgrade3;
+        return totalPackage;
+    },
+    
+    "newPackage": function(totalPackage1){
+    
+        this.upgrade1 = totalPackage1;
 
-};
+    }
 
-var readyToRace = upgrades(["tires"],["suspension"]);
+    }
+
+    console.log("Player " + numberOfplayers[0] + " upgraded " + upgrades.totalUpgrades());
+
+    upgrades.newPackage(" motor ");
+
+    console.log("player " + numberOfplayers[1] + " upgraded " + upgrades.totalUpgrades());
 
 ;
+
+console.log("We're Ready to race!");
 
 var lapsLeft = function(numberOfLaps) {
     
-    while (numberOfLaps >0) {
-        console.log(numberOfLaps + " laps left to go.");
-    
+    while (numberOfLaps >=3) {
+        console.log(numberOfLaps + " laps left to go, player " + numberOfplayers[1] + "is in the lead.");
+      
         almostDone = numberOfLaps --;
     
-    };
+        }
     
+        console.log(numberOfLaps + " laps left to go, player " + numberOfplayers[0] + "is in the lead.")
         console.log("The race is over!");
         return almostDone;
     
@@ -88,7 +104,45 @@ var lapsLeft = function(numberOfLaps) {
 
          lapsLeft(lapsRemaining);
 
- console.log("Player " + numberOfplayers[0] + " won the race!");
+    console.log("Player " + numberOfplayers[0] + " won the race!");
     
 ;
+
+
+var raceInfo = {
+    
+    "race": [
+        {
+            "raceResults": "Player 1 won",
+            "playAgain": true,
+            "timeRemaining": 20
+            
+        },
+        {
+            "raceResults": "Player 2 won",
+            "playAgain": false
+            
+        }
+        
+        
+        
+        
+    ]
+    
+}
+
+
+for (var key in raceInfo.race) {
+    if (raceInfo.race[key].raceResults == "Player 1 won") {
+        console.log("You have won the Race, play again?")
+        
+     } else {
+        console.log("Are you sure you want to quit?")
+        if (raceInfo.race[key].playAgain == true) {
+            console.log("Please press start to continue.")
+        } else {
+            console.log("you have 30 seconds seconds left to pick.");
+        }
+    }
+}
 
